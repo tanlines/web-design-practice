@@ -18,7 +18,9 @@
     line-height: 1.5;
   }
 }
-
+button {
+  cursor: pointer;
+}
 @theme {
   --breakpoint-xl: 1200px;
   --breakpoint-lg: 900px;

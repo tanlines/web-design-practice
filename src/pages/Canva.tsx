@@ -11,7 +11,12 @@ import canvaElement6 from "../assets/canva-element-6.webp";
 import canvaElement7 from "../assets/canva-element-7.webp";
 import canvaElement8 from "../assets/canva-element-8.webp";
 import canvaElement9 from "../assets/canva-element-9.webp";
-import { ChevronRightIcon, MenuIcon, XIcon } from "lucide-react";
+import {
+  ChevronRightIcon,
+  MenuIcon,
+  XIcon,
+  ExternalLinkIcon,
+} from "lucide-react";
 
 export default function Canva() {
   return (
@@ -39,11 +44,8 @@ function HamburgerMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <>
-      <div className="flex items-center gap-2 lg:hidden">
-        <MenuIcon
-          className="size-6 text-white cursor-pointer"
-          onClick={toggleMenu}
-        />
+      <div className="flex items-center gap-2 lg:hidden cursor-pointer">
+        <MenuIcon className="size-6 text-white" onClick={toggleMenu} />
       </div>
       <HamburgerMenuContent isOpen={isOpen} toggleMenu={toggleMenu} />
     </>
@@ -238,17 +240,14 @@ function NavButton({
 function LoginButtons() {
   return (
     <div className="flex items-center gap-2">
-      <button className="bg-white/10 rounded-lg px-4 py-1 hidden lg:block">
+      <button className="bg-white/10 rounded-lg px-4 py-1 hidden lg:block cursor-pointer">
         <span className="text-white">Sign up</span>
       </button>
-      <button className="hover:bg-white bg-white/90 rounded-lg px-4 py-1">
+      <button className="hover:bg-white bg-white/90 rounded-lg px-4 py-1 cursor-pointer">
         <span className="text-black">Log in</span>
       </button>
     </div>
   );
-}
-function NavContent({ children }: { children: React.ReactNode }) {
-  return <></>;
 }
 
 function MainContent() {
@@ -286,7 +285,7 @@ function MainElements() {
         />
         <img
           src={canvaElement5}
-          alt="Canva Element 2"
+          alt="Canva Element 5"
           className="top-1/12 left-[50%]"
         />
         <img
@@ -296,17 +295,17 @@ function MainElements() {
         />
         <img
           src={canvaElement7}
-          alt="Canva Element 4"
+          alt="Canva Element 7"
           className="top-5/12 left-[-20px]"
         />
         <img
           src={canvaElement6}
-          alt="Canva Element 5"
+          alt="Canva Element 6"
           className="top-7/12 left-[calc(100%-110px)]"
         />
         <img
           src={canvaElement2}
-          alt="Canva Element 6"
+          alt="Canva Element 2"
           className="top-3/4 left-[60px]"
         />
       </div>
@@ -337,9 +336,17 @@ function MainHeader() {
         Make AI-powered social posts, videos, presentations, and more with
         Canva.
       </p>
-      <button className="bg-white/90 hover:bg-white rounded-lg px-4 py-2">
-        <span className="text-black">Start designing for free</span>
-      </button>
+      <a
+        className="text-black"
+        href="https://github.com/tanlines/web-design-practice"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button className="bg-white/90 hover:bg-white rounded-lg px-4 py-2 flex gap-2">
+          View Github
+          <ExternalLinkIcon className="size-5 xl:size-6" />
+        </button>
+      </a>
     </div>
   );
 }
