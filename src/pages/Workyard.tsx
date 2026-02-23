@@ -1,10 +1,16 @@
-import { ChevronDownIcon, ExternalLinkIcon, MenuIcon, PhoneIcon, StarIcon } from "lucide-react";
+import {
+  ChevronDownIcon,
+  ExternalLinkIcon,
+  MenuIcon,
+  PhoneIcon,
+  StarIcon,
+} from "lucide-react";
 import homeHeaderImage from "../assets/workyard-img.avif";
 import accentHeaderImage from "../assets/workyard-header.svg";
 import { cn } from "../lib/utils";
 import { WorkyardSvg } from "../components/WorkyardSvg";
 import { useState } from "react";
-import "../index.css";
+import "../css/workyard.css";
 
 export default function Workyard() {
   return (
@@ -34,14 +40,12 @@ function MainContent() {
         className={cn(
           "flex flex-col items-center justify-between gap-4",
           "max-w-7xl m-auto px-5 pt-20 z-10",
-          "lg:flex-row"
+          "lg:flex-row",
         )}
       >
-        <div className={cn("flex flex-col gap-4", 
-        "w-full z-2 p-4",
-        "lg:w-3xl"
-
-        )}>
+        <div
+          className={cn("flex flex-col gap-4", "w-full z-2 p-4", "lg:w-3xl")}
+        >
           <h1
             className={cn(
               "text-white font-bold leading-16",
@@ -79,7 +83,10 @@ function MainContent() {
             <div className={cn("flex flex-col gap-2", "px-2 py-4")}>
               <div className="flex flex-row">
                 {[...Array(5)].map((_, idx) => (
-                  <StarIcon key={idx} className="size-5 xl:size-6 text-yellow-500" />
+                  <StarIcon
+                    key={idx}
+                    className="size-5 xl:size-6 text-yellow-500"
+                  />
                 ))}
               </div>
 
@@ -122,19 +129,36 @@ function Navigation() {
             <NavItem title="Resources" />
           </ul>
         </nav>
-        <div className={cn("bg-teal h-full w-full -z-10", 
-        isMenuOpen ? "translate-y-0" : "-translate-y-1000",
-        "transition-all duration-300",
-        "lg:hidden fixed top-0 left-0 right-0 bottom-0"
-        )}>
+        <div
+          className={cn(
+            "bg-teal h-full w-full -z-10",
+            isMenuOpen ? "translate-y-0" : "-translate-y-1000",
+            "transition-all duration-300",
+            "lg:hidden fixed top-0 left-0 right-0 bottom-0",
+          )}
+        >
           <div className="w-[90%] m-auto max-w-3xl pt-20">
             <nav className="lg:hidden">
-              <ul className={cn("flex flex-col items-start gap-5", "text-white")}>
+              <ul
+                className={cn("flex flex-col items-start gap-5", "text-white")}
+              >
                 <NavItem title="Product" orientation="vertical" />
                 <NavItem title="Solutions" orientation="vertical" />
-                <NavItem title="Integrations" chevron={false} orientation="vertical" />
-                <NavItem title="Pricing" chevron={false} orientation="vertical" />
-                <NavItem title="Reviews" chevron={false} orientation="vertical" />
+                <NavItem
+                  title="Integrations"
+                  chevron={false}
+                  orientation="vertical"
+                />
+                <NavItem
+                  title="Pricing"
+                  chevron={false}
+                  orientation="vertical"
+                />
+                <NavItem
+                  title="Reviews"
+                  chevron={false}
+                  orientation="vertical"
+                />
                 <NavItem title="Resources" orientation="vertical" />
               </ul>
             </nav>
@@ -147,7 +171,7 @@ function Navigation() {
               "text-white hover:text-turquoise",
               "text-sm pr-4 text-nowrap",
               "transition-all duration-300",
-              "hidden lg:block"
+              "hidden lg:block",
             )}
           >
             Contact sales
@@ -170,12 +194,15 @@ function Navigation() {
               "bg-[#cafffa] hover:bg-[#0fffe6] text-teal hover:text-black",
               "hover:translate-y-1",
               "transition-all duration-300",
-              "hidden lg:block"
+              "hidden lg:block",
             )}
           >
             Login
           </button>
-          <MenuIcon className="cursor-pointer size-6 text-white lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} />
+          <MenuIcon
+            className="cursor-pointer size-6 text-white lg:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
         </div>
       </div>
     </div>
@@ -198,7 +225,14 @@ function NavItem({
         "hover:text-turquoise transition-all duration-300 group",
       )}
     >
-      <a href="/" className={cn(orientation === "vertical" ? "text-base lg:text-xl" : "text-xs xl:text-xs 2xl:text-base")}>
+      <a
+        href="/"
+        className={cn(
+          orientation === "vertical"
+            ? "text-base lg:text-xl"
+            : "text-xs xl:text-xs 2xl:text-base",
+        )}
+      >
         {title}
       </a>
       {chevron ? (

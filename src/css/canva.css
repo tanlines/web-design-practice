@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* https://static.canva.com/web/images/cff149ee1e9d2be50ac77bcd86769d05.woff2 */
+@layer base {
+  body {
+    font-family:
+      Canva Sans,
+      Noto Sans Variable,
+      Noto Sans,
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Helvetica,
+      Arial,
+      sans-serif;
+    line-height: 1.5;
+  }
+}
+
+@theme {
+  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 900px;
+  --breakpoint-md: 600px;
+}
+
+@theme inline {
+  --body-font:
+    Canva Sans, Noto Sans Variable, Noto Sans, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+:root {
+  font-size: 14px;
+  --radius: 0.625rem;
+  --canva-gradient:
+    180deg, #992bff, #5a32fa 30.09%, #13a3b5 56.76%, #93e8f6 76.85%,
+    #f1ebff 95.28%, #fff;
+  --canva-gradient-mobile:
+    180deg, #992bff, #5a32fa 42.73%, #13a3b5 71.51%, #93e8f6 93.7%,
+    #f1ebff 104.65%;
+}
