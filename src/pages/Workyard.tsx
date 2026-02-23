@@ -15,6 +15,7 @@ import "../css/workyard.css";
 export default function Workyard() {
   return (
     <>
+      <title>Not Workyard</title>
       <Navigation />
       <MainContent />
     </>

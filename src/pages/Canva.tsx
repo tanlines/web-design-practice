@@ -21,6 +21,7 @@ import {
 export default function Canva() {
   return (
     <>
+      <title>Not Canva</title>
       <NavBar />
       <MainContent />
     </>
